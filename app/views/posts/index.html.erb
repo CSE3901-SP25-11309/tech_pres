@@ -1,0 +1,21 @@
+<p style="color: green;"><%= notice %></p>
+
+<h1>Welcome to Group 2's CanCanCan Demo!</h1>
+
+<% if user_signed_in? %>
+  <p>Logged in as <strong><%= current_user.email %></strong></p>
+
+  <%= form_with url: destroy_user_session_path, method: :delete do %>
+    <%= submit_tag "Log out", style: "background: none; border: none; color: blue; text-decoration: underline; cursor: pointer;" %>
+  <% end %>
+
+  <p>
+    <%= link_to "View Posts", posts_path %> |
+    <%= link_to "New Post", new_post_path %>
+  </p>
+<% else %>
+  <p>
+    <%= link_to "Sign up", new_user_registration_path %> or
+    <%= link_to "Log in", new_user_session_path %> to get started.
+  </p>
+<% end %>
