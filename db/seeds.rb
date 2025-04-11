@@ -17,7 +17,7 @@ User.find_or_create_by!(email: "user@example.com") do |user|
   user.admin = false
 end
 
-teacher_email = "teacher_email@group2.com"
+teacher_email = "teacher@school.com"
 
 User.find_or_create_by!(email: teacher_email) do |user|
   user.password = "password"
